@@ -1,0 +1,33 @@
+<!--<pre>--><!--{{ response | json }}--><!--</pre>-->
+
+<mat-grid-list
+  [cols]="cols | async"
+  rowHeight="2:3"
+  gutterSize="16"
+>
+  <mat-grid-tile *ngFor="let movie of response">
+
+    <mat-card class="card">
+      <!--<mat-card-header>-->
+        <!--&lt;!&ndash;<div mat-card-avatar class="example-header-image"></div>&ndash;&gt;-->
+
+      <!--</mat-card-header>-->
+      <img
+        mat-card-image
+        [src]="'https://image.tmdb.org/t/p/w200'+movie.poster_path"
+        alt="{{ movie.title }}"
+        class="character-pic"
+      >
+      <mat-card-content>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.vote_average }}</mat-card-subtitle>
+        {{ movie.release_date }}
+      </mat-card-content>
+      <mat-card-actions class="actions">
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-grid-tile>
+</mat-grid-list>

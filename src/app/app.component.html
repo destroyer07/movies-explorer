@@ -1,0 +1,19 @@
+<app-toolbar-sidenav>
+
+  <h1 class="app-name title">Movies Explorer</h1>
+
+  <div class="toolbar-icons">
+      <button mat-icon-button>
+        <mat-icon>settings</mat-icon>
+      </button>
+  </div>
+
+  <mat-nav-list class="side-menu">
+    <a mat-list-item [routerLink]="['/movies']">Movies</a>
+  </mat-nav-list>
+
+  <div class="content container">
+    <router-outlet></router-outlet>
+  </div>
+
+</app-toolbar-sidenav>
